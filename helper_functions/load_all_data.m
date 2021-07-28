@@ -1,7 +1,7 @@
 clear all
 
 des_data = 'post';
-monkey = 'kurt';
+monkey = 'pele';
 data_used = 'all';
 
 set_paths(des_data);

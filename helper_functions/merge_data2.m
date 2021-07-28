@@ -140,6 +140,14 @@ for ns=1:numses
         data_bipolar = ft_preprocessing(tmp_cfg,data);
     end
     
+    %% Additional step if we want to Low pass filter the dataset for test
+    if cfg.lpfilter
+        lpf_cfg = [];
+        lpf_cfg.lpfilter = 'yes';
+        lpf_cfg.lpfreq = 80;
+        data_bipolar = ft_preprocessing(lpf_cfg, data_bipolar);
+    end 
+    
     %%
     if strcmp(cfg.norm,'yes')
         s_cfg = [];
@@ -149,6 +157,7 @@ for ns=1:numses
     else
         data = data_bipolar;
     end
+    
 
     eval(sprintf('data%0.2d = data;',ns));  
     clear data
@@ -271,4 +280,5 @@ else
     dataAttOut = [];
     
 end
+
 disp('Ready')

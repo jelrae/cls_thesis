@@ -1,10 +1,12 @@
-function cfg = config_setup(roi, monkey, des_data, data_used, lpf)
+function cfg = config_setup(roi, monkey, des_data, data_used)
     %% Configuration parameters - the following are consistent
     cfg = [];
     cfg.equal = 'yes';
     
+    lpf = 1;
+    
     if lpf
-        cfg.lpfilter = 'yes';
+        cfg.lpfilter = 1;
     end
     
     if strcmp(des_data, 'baseline')

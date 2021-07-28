@@ -34,9 +34,7 @@ roi_2 = V4;
 roi_combine = [roi roi_2];
 
 %% Configuration parameters and bipolar merging
-cfg = config_setup(roi, monkey, des_data, data_used, 1);
-
-% cfg = config_setup(roi, monkey, des_data, data_used);
+cfg = config_setup(roi, monkey, des_data, data_used);
 mcfg = cfg;
 
 [dataAttIn,dataAttOut] = merge_data2(mcfg, true);
