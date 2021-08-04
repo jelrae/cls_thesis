@@ -13,16 +13,16 @@ ptic('starting\n')
 %% Load data and restructure
 
 % Load the full AttIn pele data, this seems to work fine
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
+load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
+load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
 
 % Load the full AttOut pele data, not tested yet
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttOut.mat')
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttOut.mat')
 
 % Load in pele low pass filtered
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v1_AttIn.mat')
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v4_AttIn.mat')
+% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v1_AttIn.mat')
+% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v4_AttIn.mat')
 
 % Load the full kurt data - Problem child
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
@@ -97,7 +97,8 @@ nobs      = size(v1_in,2);   % no. obs per trial
 regmode   = 'OLS';  % VAR model estimation regression mode ('OLS', 'LWR' or empty for default)
 icregmode = 'LWR';  % information criteria regression mode ('OLS', 'LWR' or empty for default)
 
-morder    = 'AIC';  % model order to use ('actual', 'AIC', 'BIC' or supplied numerical value)
+model_order    = 'AIC';  % model order to use ('actual', 'AIC', 'BIC' or supplied numerical value)
+% morder    = 'AIC'; 
 momax     = 30;     % maximum model order for model order estimation (<= 30)
 
 acmaxlags = '';   % maximum autocovariance lags (empty for automatic calculation)
@@ -148,15 +149,26 @@ for chan1=1:num_chan_v1
         % VAR - channel combinations 
         [aic,bic,moaic,mobic] = tsdata_to_infocrit(region_comp,momax,icregmode, verb);
 
-        if strcmpi(morder,'AIC')
+        if strcmpi(model_order,'AIC')
             morder = moaic;
             fprintf('\nusing AIC best model order = %d\n',morder);
-        elseif strcmpi(morder,'BIC')
+        elseif strcmpi(model_order,'BIC')
             morder = mobic;
             fprintf('\nusing BIC best model order = %d\n',morder);
         else
             fprintf('\nusing specified model order = %d\n',morder);
+            morder = model_order;
         end
+        
+%         if strcmpi(morder,'AIC')
+%             morder = moaic;
+%             fprintf('\nusing AIC best model order = %d\n',morder);
+%         elseif strcmpi(morder,'BIC')
+%             morder = mobic;
+%             fprintf('\nusing BIC best model order = %d\n',morder);
+%         else
+%             fprintf('\nusing specified model order = %d\n',morder);
+%         end        
 
         ptic('\n*** tsdata_to_var... ');
         [A,SIG] = tsdata_to_var(region_comp,morder,regmode);
@@ -178,6 +190,10 @@ for chan1=1:num_chan_v1
             ptoc;
             % Check for failed spectral GC calculation
             assert(~isbad(f,false),'spectral GC calculation failed');
+            
+            if ~isreal(f)
+                fprintf('\nCurrent channel combination is complex: %d, %d, didnt work!\n', chan1, chan4)
+            end
             
             % Only collect f of size maz_len_f
             gc_one(end+1,:) = squeeze(f(1,2,:)); 

@@ -1,6 +1,6 @@
 %% Initalize
 
-addpath('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/gc_hierarchies/helper_functions/')
+addpath('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/helper_functions/')
 set_paths_roi;
 
 clear all
@@ -11,8 +11,8 @@ ft_defaults
 load_data = true; 
 
 % Declare your Monkey!
-% monkey = 'kurt';
-monkey = 'pele';
+monkey = 'kurt';
+% monkey = 'pele';
 
 % Define and set analysis objectives and specifics:
 exp_desc = 'V1 compared to baseline (loglog)';
@@ -46,8 +46,17 @@ if ~load_data
     % these cfg into a 
 else
    load(sprintf('%s_p_all_AttIn.mat',monkey));
-   load(sprintf('%s_p_all_AttOut.mat',monkey));
+   %commented out for the noise check test
+%    load(sprintf('%s_p_all_AttOut.mat',monkey));
 end
+
+%% for the checking of if noise changes the power 
+all_AttOut = all_AttIn;
+
+for i = 1:length(all_AttOut)
+    all_AttOut.trial{i} = all_AttOut.trial{i} + (.25 .* randn(size(all_AttOut.trial{i})));
+end
+
 
 %% Fourier transfrom
 cnd = {'AttIn' 'AttOut'}; % conditions

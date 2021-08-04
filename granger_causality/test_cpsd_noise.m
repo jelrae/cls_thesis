@@ -74,8 +74,8 @@ v4_in = cat(3,v4_in_preclean{:});
 % end
 
 % Add some random noise to hope to help...
-v1_in = v1_in +(.25 .* randn(size(v1_in)));
-v4_in = v4_in +(.25 .* randn(size(v4_in)));
+% v1_in = v1_in +(.25 .* randn(size(v1_in)));
+% v4_in = v4_in +(.25 .* randn(size(v4_in)));
 
 clear v1_in_preclean v4_in_preclean
 clear max_val_1 max_val_4 min_val_1 min_val_4
@@ -126,80 +126,14 @@ errors = [];
 num_chan_v1 = size(v1_in, 1);
 num_chan_v4 = size(v4_in, 1);
 
-
-for chan1=1:num_chan_v1
-    
-%     fprintf('\nCurrent V1 channel: %d\n', chan1)
-    
-    % Access the selected channel for region 1
-    v1_chan = v1_in(chan1,:,:);
-    
-    for chan4=1:num_chan_v4
-        % show where we are
-        fprintf('\nCurrent channel combination is: %d, %d\n', chan1, chan4)
-        % Access the selected channel for region 4
-        v4_chan = v4_in(chan4,:,:);
+v1_chan = v1_in(1,:,:);
+v4_chan = v4_in(1,:,:);
         
-        % Concatanate the channels
-        region_comp = cat(1, v1_chan, v4_chan);
+% Concatanate the channels
+region_comp = cat(1, v1_chan, v4_chan);
         
-        %% Start the calcs of granger cause
-        % Find the cpsd
-        ptic('\n*** tsdata_to_cpsd... ');
-        cpsd_trial = tsdata_to_cpsd(region_comp,fres);
-        ptoc;
-        % find the autocov
-        ptic('\n*** cpsd_to_autocov... ');
-        [G,q] = cpsd_to_autocov(cpsd_trial);
-        ptoc;
-        
-        try
-
-            ptic('\n*** autocov_to_spwcgc... ');
-            f= autocov_to_spwcgc(G,fres);
-            ptoc;
-            % Check for failed spectral GC calculation
-            assert(~isbad(f,false),'spectral GC calculation failed');
-            
-            if ~isreal(f)
-                fprintf('\nCurrent channel combination is complex: %d, %d, didnt work!\n', chan1, chan4)
-            end
-            
-            % Only collect f of size maz_len_f
-            gc_one(end+1,:) = squeeze(f(1,2,:)); 
-            gc_two(end+1,:) = squeeze(f(2,1,:));
-            
-            sizes(end+1) = size(f,3);
-
-        catch % for intstances with unstable VAR root
-            
-            fprintf('\nCurrent channel combination is: %d, %d, didnt work!\n', chan1, chan4)
-            errors(end+1,:) = [chan1 chan4];
-%             skipped_trials(end+1) = t;
-%             fprintf('\nskipping trial %d channel combo V1[%d] V4[%d]',t,v1, v4);
-%             fid = fopen(skipped_trials_path,'at');
-%             fprintf(fid, '\nskipping trial %d channel combo V1[%d] V4[%d]',t,v1, v4);
-%             fclose(fid);
-            continue    
-        end
-    end
-end
-
-% average the results and plot
-gc_1_ave = mean(gc_one, 1);
-gc_2_ave = mean(gc_two, 1);
-% f_all = vertcat(gc_1_ave, gc_2_ave);
-% gc_plot(f_all, fs);
-
-%% do some plotting
-x_range = (1:1:length(gc_1_ave))./length(gc_1_ave);
-x_range = x_range.*fnq;
-blue=[.3 .8 .9];red=[1 .1 .1];
-
-plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
-plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on;
-set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
-set(gca,'box','off');legend('FF','FB');legend boxoff;
-xlim([0 fnq]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
-ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
-ylabel('Granger causality');xlabel('Frequency (Hz)');
+%% Start the calcs of granger cause
+% Find the cpsd
+cpsd_trial_no_noise = tsdata_to_cpsd(region_comp,fres);
+region_comp_noise = region_comp + (.25 .* randn(size(region_comp)));
+cpsd_trial_noise = tsdata_to_cpsd(region_comp_noise,fres);
