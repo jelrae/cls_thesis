@@ -7,9 +7,9 @@ ft_defaults
 
 %% Select the monkey and define region interest (hyperparamters)
 % monkey = 'kurt';
-monkey = 'pele';
+monkey = 'kurt';
 
-load_data = false;
+load_data = true;
 
 % Define and set analysis objectives and specs:
 
@@ -29,7 +29,7 @@ roi_combine = [roi roi_2];
 
 if ~load_data
     % Configuration parameters - the following are consistent
-    cfg = config_setup(roi, monkey, des_data, 'all');
+    cfg = config_setup(roi, monkey, des_data, 'all', false);
     mcfg = cfg;
     [all_AttIn, all_AttOut] = merge_data2(mcfg);
     

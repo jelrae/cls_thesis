@@ -1,12 +1,14 @@
-function cfg = config_setup(roi, monkey, des_data, data_used)
+function cfg = config_setup(roi, monkey, des_data, data_used,outlier_removal)
     %% Configuration parameters - the following are consistent
     cfg = [];
     cfg.equal = 'yes';
     
-    lpf = 1;
+    lpf = 0;
     
     if lpf
         cfg.lpfilter = 1;
+    else
+        cfg.lpfilter = 0;
     end
     
     if strcmp(des_data, 'baseline')
@@ -38,7 +40,11 @@ function cfg = config_setup(roi, monkey, des_data, data_used)
                 cfg.v_session = [40 41];
             end
         end
-        cfg.bipolarder = 'C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\kurt_montage_layout\kurt_montage_bipolar_alongfinger_v2.mat';
+        if outlier_removal
+            cfg.bipolarder = 'C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\kurt_montage_layout\kurt_outlier_removed_af2.mat';
+        else
+            cfg.bipolarder = 'C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\kurt_montage_layout\kurt_montage_bipolar_alongfinger_v2.mat';
+        end
     elseif strcmp(monkey,'pele')    
         monkey_code = 'P';
         cfg.monkey = 'pe';
@@ -57,6 +63,11 @@ function cfg = config_setup(roi, monkey, des_data, data_used)
                 cfg.v_session = [28 29]; % Vector referring to number of sessions [28 29]
             end
         end
-        cfg.bipolarder = 'C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\pele_montage_layout\pele_montage_bipolar_alongfinger_v2.mat';
+        if outlier_removal
+            cfg.bipolarder = 'C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\pele_montage_layout\pele_outlier_removed_af2.mat';
+        else
+            cfg.bipolarder = 'C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\pele_montage_layout\pele_montage_bipolar_alongfinger_v2.mat';
+        end
+        
     end
     disp('---------------Config made---------------')

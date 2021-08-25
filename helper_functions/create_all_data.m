@@ -3,9 +3,8 @@ clc
 
 % monkeys = {'pele' 'kurt'};
 % des_datas = {'baseline', 'post'}; 
-monkeys = {'pele'};
+monkeys = {'kurt'};
 des_datas = {'post'}; 
-% des_datas = {'post'};
 data_used = 'all';
 bipolar = true;
 

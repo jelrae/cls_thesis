@@ -10,24 +10,68 @@ clear all;
 close all;clc;
 ptic('starting\n')
 
+load_data = true;
+
 %% Load data and restructure
 
-% Load the full AttIn pele data, this seems to work fine
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
+if load_data
+    % Load the full AttIn pele data, this seems to work fine
+%     load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
+%     load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
 
-% Load the full AttOut pele data, not tested yet
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttOut.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttOut.mat')
+    % Load the full AttOut pele data, not tested yet
+    % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttOut.mat')
+    % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttOut.mat')
 
-% Load in pele low pass filtered
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v4_AttIn.mat')
+    % Load in pele low pass filtered
+    % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v1_AttIn.mat')
+    % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v4_AttIn.mat')
 
-% Load the full kurt data - Problem child
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v4_AttIn.mat')
+    % Load the full kurt data - Problem child
+    load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
+    load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v4_AttIn.mat')
+else
+    % Do the prepreocessing to get this shit in!
+    % Define and set analysis objectives and specifics:
+    exp_desc = 'Coherence';
+    roi_string = 'V1 and V4'; % Set for plotting
 
+
+    %% Add paths
+    set_paths(des_data);
+
+    ft_defaults
+
+    %% Run script to get ROIs specific to the monkey
+    vbm_rois;
+    % Define region of interest 1
+    roi = V1;
+    %Define region of interest 2
+    roi_2 = V4;
+    roi_combine = [roi roi_2];
+
+    %% Configuration parameters and bipolar merging
+    cfg = config_setup(roi, monkey, des_data, data_used);
+    mcfg = cfg;
+
+    [dataAttIn,dataAttOut] = merge_data2(mcfg, true);
+
+    %% Select data for respective ROIs
+    % ROI One
+    roi_cfg = [];
+    roi_cfg.channel = roi;
+    % ROI Two
+    roi_cfg2 = [];
+    roi_cfg2.channel = roi_2;
+    % All data in one file + indices for two ROIs
+    all_cfg = [];
+    all_cfg.channel = roi_combine;
+
+    % Changing shit for non bilpolar version
+
+    v1_AttIn =  ft_selectdata(roi_cfg, dataAttIn);
+    v4_AttIn =  ft_selectdata(roi_cfg2, dataAttIn);
+end
 % Get the trial part of the structure with the data AttIn
 v1_in_preclean = v1_AttIn.trial;
 v4_in_preclean = v4_AttIn.trial;

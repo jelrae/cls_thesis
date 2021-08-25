@@ -47,15 +47,15 @@ if ~load_data
 else
    load(sprintf('%s_p_all_AttIn.mat',monkey));
    %commented out for the noise check test
-%    load(sprintf('%s_p_all_AttOut.mat',monkey));
+   load(sprintf('%s_p_all_AttOut.mat',monkey));
 end
 
 %% for the checking of if noise changes the power 
-all_AttOut = all_AttIn;
-
-for i = 1:length(all_AttOut)
-    all_AttOut.trial{i} = all_AttOut.trial{i} + (.25 .* randn(size(all_AttOut.trial{i})));
-end
+% all_AttOut = all_AttIn;
+% 
+% for i = 1:length(all_AttOut)
+%     all_AttOut.trial{i} = all_AttOut.trial{i} + (.25 .* randn(size(all_AttOut.trial{i})));
+% end
 
 
 %% Fourier transfrom
