@@ -1,4 +1,4 @@
-function create_bipolarderivatives_function(monkey, des_data, data_used)
+function create_bipolarderivatives_function(monkey, des_data, data_used, bad_chanel_remove)
 %% Create the Polpolar derivatives Preprocessing
 
 %% Start Clear and hparams
@@ -34,7 +34,7 @@ roi_2 = V4;
 roi_combine = [roi roi_2];
 
 %% Configuration parameters and bipolar merging
-cfg = config_setup(roi, monkey, des_data, data_used, false);
+cfg = config_setup(roi, monkey, des_data, data_used, bad_chanel_remove);
 mcfg = cfg;
 
 [dataAttIn,dataAttOut] = merge_data2(mcfg, true);
@@ -71,8 +71,11 @@ disp('-------------Data Selection done---------------')
 disp('-------------Save Begin---------------')
 
 %% Save
-
-save_dir = sprintf('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/data/monkey_%s_data/bipolar_lowpass_%s_data', monkey, des_data);
+if bad_chanel_remove
+    save_dir = sprintf('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/data/monkey_%s_data/bipolar_no_bad_chan_%s_data', monkey, des_data);
+else
+    save_dir = sprintf('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/data/monkey_%s_data/bipolar_%s_data', monkey, des_data);
+end
 
 if ~exist(save_dir, 'dir')
     mkdir(save_dir);
