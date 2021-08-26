@@ -1,96 +1,28 @@
-%% Set up paths
-addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\gc_hierarchies\')
-%addpath('D:/MATLAB/mvgc_v1.0')
-startup
-addpath('C:\Users\Jordan\Documents\cls_thesis\matlab\fieldtrip-20210411')
+%% Set up and load data
+addpath('/home/12297127/matlab/MVGC');
+addpath('/home/cbosman1/matlab/fieldtrip/');
+
 ft_defaults
+startup
 
 format short;
 clear all;
 close all;clc;
-ptic('starting\n')
 
-%% Load data and restructure
+default_home = '/home/12297127/';
 
-% Load the full AttIn pele data, this seems to work fine OG channels
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
-% Outlier channels removed
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_no_bad_chan_post_data\pele_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_no_bad_chan_post_data\pele_p_v4_AttIn.mat')
+%%Load data
 
-% Load the full AttOut pele data, not tested yet
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttOut.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttOut.mat')
+load('/home/12297127/data/no_bad_channels/pele_p_v1_AttIn.mat')
+load('/home/12297127/data/no_bad_channels/pele_p_v4_AttIn.mat')
 
-% Load the full kurt data OG channels
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v4_AttIn.mat')
-% Outlier channels removed
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_no_bad_chan_post_data\kurt_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_no_bad_chan_post_data\kurt_p_v4_AttIn.mat')
+v1_in = v1_AttIn.trial;
+v4_in = v4_AttIn.trial;
 
-% Get the trial part of the structure with the data AttIn
-v1_in_preclean = v1_AttIn.trial;
-v4_in_preclean = v4_AttIn.trial;
+v1_in = cat(3,v1_in{:});
+v4_in = cat(3,v4_in{:});
 
-% Get the trial part of the structure with the data AttOut
-% v1_in_preclean = v1_AttOut.trial;
-% v4_in_preclean = v4_AttOut.trial;
-
-% Concat them along the 3rd dim so we have the data in the structure we
-% want.  Structure needed is (#regions x #obs x #trials)
-
-%For when we dont preclean
-v1_in = cat(3,v1_in_preclean{:});
-v4_in = cat(3,v4_in_preclean{:});
-
-%For when we preclean
-% v1_in_preclean = cat(3,v1_in_preclean{:});
-% v4_in_preclean = cat(3,v4_in_preclean{:});
-
-% Dirty remove outlier
-
-% [max_val_1, ~] = max(v1_in_preclean, [], [1,2], 'linear');
-% [min_val_1, ~] = min(v1_in_preclean, [], [1,2], 'linear');
-% 
-% max_val_1 = squeeze(max_val_1);
-% min_val_1 = squeeze(min_val_1);
-% 
-% [max_val_4, ~] = max(v4_in_preclean, [], [1,2], 'linear');
-% [min_val_4, ~] = min(v4_in_preclean, [], [1,2], 'linear');
-% 
-% max_val_4 = squeeze(max_val_4);
-% min_val_4 = squeeze(min_val_4);
-% 
-% v1_in = [];
-% v4_in = [];
-% 
-% thresh = 130;
-% 
-% for i = 1:length(max_val_1)
-%     if ((max_val_1(i) < thresh) & (min_val_1(i) > -thresh)) & ((max_val_4(i) < thresh) & (min_val_4(i) > -thresh))
-%         v1_in(:,:,end+1) = v1_in_preclean(:,:,i);
-%         v4_in(:,:,end+1) = v4_in_preclean(:,:,i);
-%     end
-% end
-
-% Add some random noise to hope to help...
-% v1_in = v1_in +(.25 .* randn(size(v1_in)));
-% v4_in = v4_in +(.25 .* randn(size(v4_in)));
-
-clear v1_in_preclean v4_in_preclean
-clear max_val_1 max_val_4 min_val_1 min_val_4
 clear v1_AttIn v4_AttIn
-
-% v1_in(:,:,1) = [];
-% v4_in(:,:,1) = [];
-
-% Reduce number of trials
-
-% v1_in = v1_in(:,:,1:1235);
-% v4_in = v4_in(:,:,1:1235);
-
 
 %% Parameters
 ntrials   = size(v1_in,3);     % no. trials
@@ -129,7 +61,6 @@ errors = [];
 num_chan_v1 = size(v1_in, 1);
 num_chan_v4 = size(v4_in, 1);
 
-
 for chan1=1:num_chan_v1
     
 %     fprintf('\nCurrent V1 channel: %d\n', chan1)
@@ -161,16 +92,6 @@ for chan1=1:num_chan_v1
             fprintf('\nusing specified model order = %d\n',morder);
             morder = model_order;
         end
-        
-%         if strcmpi(morder,'AIC')
-%             morder = moaic;
-%             fprintf('\nusing AIC best model order = %d\n',morder);
-%         elseif strcmpi(morder,'BIC')
-%             morder = mobic;
-%             fprintf('\nusing BIC best model order = %d\n',morder);
-%         else
-%             fprintf('\nusing specified model order = %d\n',morder);
-%         end        
 
         ptic('\n*** tsdata_to_var... ');
         [A,SIG] = tsdata_to_var(region_comp,morder,regmode);
@@ -207,11 +128,6 @@ for chan1=1:num_chan_v1
             
             fprintf('\nCurrent channel combination is: %d, %d, didnt work!\n', chan1, chan4)
             errors(end+1,:) = [chan1 chan4];
-%             skipped_trials(end+1) = t;
-%             fprintf('\nskipping trial %d channel combo V1[%d] V4[%d]',t,v1, v4);
-%             fid = fopen(skipped_trials_path,'at');
-%             fprintf(fid, '\nskipping trial %d channel combo V1[%d] V4[%d]',t,v1, v4);
-%             fclose(fid);
             continue    
         end
     end
@@ -220,8 +136,6 @@ end
 % average the results and plot
 gc_1_ave = mean(gc_one, 1);
 gc_2_ave = mean(gc_two, 1);
-% f_all = vertcat(gc_1_ave, gc_2_ave);
-% gc_plot(f_all, fs);
 
 %% do some plotting
 x_range = (1:1:length(gc_1_ave))./length(gc_1_ave);
