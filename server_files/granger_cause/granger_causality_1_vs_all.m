@@ -61,7 +61,7 @@ ntrials   = size(all_regions,3);     % no. trials
 nobs      = size(all_regions,2);   % no. obs per trial
 
 figure(1);
-
+regions(6) = [];
 % for each region
 for region = 1 : length(regions)
     %Reset the gc storing arrays
@@ -147,30 +147,43 @@ for region = 1 : length(regions)
     x_range = x_range.*fnq;
     blue=[.3 .8 .9];red=[1 .1 .1];
     
-    subplot(len(regions), 1, region)
+    subplot(length(regions), 4, (4*region) - 3)
     plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
     plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on;
-    set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
-    set(gca,'box','off');legend('FF','FB');legend boxoff;
+%     set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
+%     set(gca,'box','off');legend('FF','FB');legend boxoff;
+    legend('FF','FB');legend boxoff;
     xlim([0 10]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
     ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
     ylabel('Granger causality');xlabel('Frequency (Hz)');
     
-    subplot(len(regions), 1, region)
+    subplot(length(regions), 4, (4*region) - 2)
     plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
     plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on;
-    set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
-    set(gca,'box','off');legend('FF','FB');legend boxoff;
+%     set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
+%     set(gca,'box','off');legend('FF','FB');legend boxoff;
+    legend('FF','FB');legend boxoff;
     xlim([10 30]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
     ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
     ylabel('Granger causality');xlabel('Frequency (Hz)');
     
-    subplot(len(regions), 1, region)
+    subplot(length(regions), 4, (4*region) - 1)
     plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
     plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on;
-    set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
-    set(gca,'box','off');legend('FF','FB');legend boxoff;
+%     set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
+%     set(gca,'box','off');legend('FF','FB');legend boxoff;
+    legend('FF','FB');legend boxoff;
     xlim([30 100]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
+    ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
+    ylabel('Granger causality');xlabel('Frequency (Hz)');
+    
+    subplot(length(regions), 4, (region*4))
+    plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
+    plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on;
+%     set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
+%     set(gca,'box','off');legend('FF','FB');legend boxoff;
+    legend('FF','FB');legend boxoff;
+    xlim([0 140]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
     ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
     ylabel('Granger causality');xlabel('Frequency (Hz)');
     
