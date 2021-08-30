@@ -26,12 +26,16 @@ set_paths(des_data);
 ft_defaults
 
 %% Run script to get ROIs specific to the monkey
-vbm_rois;
+% Only ROIS for 1 and 4
+% vbm_rois;
+% ROIS for ALLLLL
+fig_6_ROIS;
+
 % Define region of interest 1
 roi = V1;
 %Define region of interest 2
 roi_2 = V4;
-roi_combine = [roi roi_2];
+roi_combine = all_channels;
 
 %% Configuration parameters and bipolar merging
 cfg = config_setup(roi, monkey, des_data, data_used, bad_chanel_remove);
