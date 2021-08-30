@@ -150,7 +150,7 @@ xlim([0 fnq]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
 ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
 ylabel('Granger causality');xlabel('Frequency (Hz)');
 
-save_dir = '/home/12297127/figs/gc_basic';
+save_dir = '/home/12297127/cls_thesis/cluster_figs/gc_basic';
 
 if ~exist(save_dir, 'dir')
     mkdir(save_dir);

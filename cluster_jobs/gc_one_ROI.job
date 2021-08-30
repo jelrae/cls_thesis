@@ -5,5 +5,5 @@
 #SBATCH --mail-user 12297127@student.uva.nl
 #SBATCH --mail-type=ALL
 #SBATCH --mem=64G
-module load matlab {version 2017a}
+module load matlab {version 2019a}
 matlab -nodisplay -r "addpath /home/12297127/cls_thesis/server_files/granger_cause/; gc_cluster.m; quit"
