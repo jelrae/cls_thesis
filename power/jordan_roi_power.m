@@ -14,15 +14,20 @@ load_data = true;
 monkey = 'kurt';
 % monkey = 'pele';
 
-% Define and set analysis objectives and specifics:
-exp_desc = 'V1 compared to baseline (loglog)';
-roi_string = 'V1'; % Set for plotting
+% % Define and set analysis objectives and specifics origional:
+% exp_desc = 'V1 compared to baseline (loglog)';
+% roi_string = 'V1'; % Set for plotting
+% for investigation of "bad region"
+
+exp_desc = sprintf('%s a8L attin compared to attout (loglog)', monkey);
+roi_string = "a8L"; % Set for plotting
+
 plot_loglog = 'yes'; % Set to yes to plot loglog
 
 % Run script to get ROIs specific to the monkey
-vbm_rois;
+fig_6_ROIS;
 % Define region of interest
-roi = V1;
+roi = a8L;
 
 
 % for our testing purposes

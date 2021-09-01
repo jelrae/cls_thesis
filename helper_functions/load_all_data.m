@@ -1,7 +1,7 @@
 clear all
 
 des_data = 'post';
-monkey = 'pele';
+monkey = 'kurt';
 data_used = 'all';
 
 set_paths(des_data);
@@ -9,15 +9,16 @@ set_paths(des_data);
 ft_defaults
 
 %% Run script to get ROIs specific to the monkey
-vbm_rois;
-% Define region of interest 1
-roi = V1;
-%Define region of interest 2
-roi_2 = V4;
-roi_combine = [roi roi_2];
+fig_6_ROIS;
+% % Define region of interest 1
+% roi = V1;
+% %Define region of interest 2
+% roi_2 = V4;
+% roi_combine = [roi roi_2];
+roi = all_channels;
 
 %% Configuration parameters and bipolar merging
-cfg = config_setup(roi, monkey, des_data, data_used);
+cfg = config_setup(roi, monkey, des_data, data_used, false);
 
 %%  Parameters
 equal = cfg.equal;
@@ -263,7 +264,12 @@ min_channel = min(in_trials, [],[2,3]);
 trial_mean = mean(in_trials, 2);
 trial_std = std(in_trials,0, 2);
 
-% Data viewing in FT
-cfg = [];
-cfg.viewmode = 'vertical';
-artfct       = ft_databrowser(cfg, dataAttIn)
+% A8L_regions = {'A08','A07','A09','A08','O04','O03','O06','O05','O07','O06','O08','O07','O02','O01','O03','O02'};
+A8L_regions = {'A08','A07','O06','O05','O07','O02','O01','O03'};
+
+power_check(dataAttIn, A8L_regions);
+
+% %Data viewing in FT
+% cfg = [];
+% cfg.viewmode = 'vertical';
+% artfct       = ft_databrowser(cfg, dataAttIn)
