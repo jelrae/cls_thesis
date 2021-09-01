@@ -156,4 +156,4 @@ if ~exist(save_dir, 'dir')
     mkdir(save_dir);
 end
 
-saveas(gcf,'/home/12297127/figs/gc_basic/v1v4.fig')
+saveas(gcf,'/home/12297127/cls_thesis/server_files/results/v1v4.fig')

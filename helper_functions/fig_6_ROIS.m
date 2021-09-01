@@ -8,7 +8,8 @@ if strcmp(monkey,'kurt')
     V4 = {'H07-H06', 'H08-H07', 'H09-H08', 'H10-H09', 'H12-H11', 'H13-H12', ...
         'H21-H20', 'H22-H21', 'H23-H22', 'H24-H23', 'H25-H24', 'H26-H25', ...
         'H27-H26', 'H28-H27', 'G12-G11', 'G24-G23', 'G25-G24', 'G26-G25', 'J12-J11'};
-    a8L = {'A08-A07', 'A09-A08', 'O04-O03', 'O06-O05', 'O07-O06', 'O08-O07','O02-O01', 'O03-O02'};
+%     a8L = {'A08-A07', 'A09-A08', 'O04-O03', 'O06-O05', 'O07-O06', 'O08-O07','O02-O01', 'O03-O02'};
+    a8L = {'A09-A08', 'O04-O03', 'O08-O07','O02-O01', 'O03-O02'};
     V2 = {'J03-J02', 'J04-J03', 'J05-J04', 'J06-J05', 'J07-J06',...
         'J08-J07', 'J09-J08', 'J10-J09', 'J11-J10'};
     V1 = {'J02-J01',  'J14-J13', 'J15-J14', 'J16-J15', 'J17-J16',...
@@ -40,5 +41,6 @@ end
 
 regions = {a7A, a8M, DP, TEO, V4, a8L, V2, V1};
 all_channels = {cat(2,regions{:})}; all_channels = all_channels{1};
+region_names = ["a7A", "a8M", "DP", "TEO", "V4", "a8L", "V2", "V1"];
 
 % Create the empty figure space to be filled?

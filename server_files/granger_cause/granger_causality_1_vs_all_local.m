@@ -60,8 +60,11 @@ all_regions = cat(3,all_regions{:});
 ntrials   = size(all_regions,3);     % no. trials
 nobs      = size(all_regions,2);   % no. obs per trial
 
+num_chan_all = size(all_regions, 1);
+
 figure(1);
-regions(6) = [];
+% regions(6) = [];
+% region_names(6) = [];
 % for each region
 for region = 1 : length(regions)
     %Reset the gc storing arrays
@@ -73,62 +76,70 @@ for region = 1 : length(regions)
     current_region = ft_selectdata(roi_cfg, all_AttIn);
     current_region = current_region.trial;
     current_region = cat(3,current_region{:});
+    num_chan_cur = size(current_region, 1);
     % Cycle over the channels for each of the two (all regions and current)
     % for testing purposes we are just going to do one of each and try to
     % plot
-    region_comp = cat(1, current_region(1,:,:), all_regions(1,:,:));
-    
-    %% Start the calcs of granger cause
-    % VAR - channel combinations 
-    [aic,bic,moaic,mobic] = tsdata_to_infocrit(region_comp,momax,icregmode, verb);
+    for chan_all = 1 : 2
+        for chan_cur = 1 : 2
+%     for chan_all = 1 : num_chan_all
+%         for chan_cur = 1 : num_chan_cur
+            fprintf('\nCurrent channel combination for region %s is: %d, %d\n', region_names(region), chan_cur, chan_all)
+            region_comp = cat(1, current_region(chan_cur,:,:), all_regions(chan_all,:,:));
 
-    if strcmpi(model_order,'AIC')
-        morder = moaic;
-        fprintf('\nusing AIC best model order = %d\n',morder);
-    elseif strcmpi(model_order,'BIC')
-        morder = mobic;
-        fprintf('\nusing BIC best model order = %d\n',morder);
-    else
-        fprintf('\nusing specified model order = %d\n',morder);
-        morder = model_order;
-    end
-    
-    ptic('\n*** tsdata_to_var... ');
-    [A,SIG] = tsdata_to_var(region_comp,morder,regmode);
+            %% Start the calcs of granger cause
+            % VAR - channel combinations 
+            [aic,bic,moaic,mobic] = tsdata_to_infocrit(region_comp,momax,icregmode, verb);
 
-    ptoc;
-    % Check for failed regression
-    assert(~isbad(A),'VAR estimation failed');
+            if strcmpi(model_order,'AIC')
+                morder = moaic;
+                fprintf('\nusing AIC best model order = %d\n',morder);
+            elseif strcmpi(model_order,'BIC')
+                morder = mobic;
+                fprintf('\nusing BIC best model order = %d\n',morder);
+            else
+                fprintf('\nusing specified model order = %d\n',morder);
+                morder = model_order;
+            end
 
-    % Autocovariance calculation
-    ptic('*** var_to_autocov... ');
-    [G,info] = var_to_autocov(A,SIG,acmaxlags);
-    ptoc;
-    
-    try
-        var_info(info,true); % report results (and bail out on error)
+            ptic('\n*** tsdata_to_var... ');
+            [A,SIG] = tsdata_to_var(region_comp,morder,regmode);
 
-        ptic('\n*** autocov_to_spwcgc... ');
-        f= autocov_to_spwcgc(G,fres);
-        ptoc;
-        % Check for failed spectral GC calculation
-        assert(~isbad(f,false),'spectral GC calculation failed');
+            ptoc;
+            % Check for failed regression
+            assert(~isbad(A),'VAR estimation failed');
 
-        if ~isreal(f)
-            fprintf('\nCurrent channel combination is complex: %d, %d, didnt work!\n', chan1, chan4)
+            % Autocovariance calculation
+            ptic('*** var_to_autocov... ');
+            [G,info] = var_to_autocov(A,SIG,acmaxlags);
+            ptoc;
+
+            try
+%                 var_info(info,true); % report results (and bail out on error)
+
+                ptic('\n*** autocov_to_spwcgc... ');
+                f= autocov_to_spwcgc(G,fres);
+                ptoc;
+                % Check for failed spectral GC calculation
+                assert(~isbad(f,false),'spectral GC calculation failed');
+
+                if ~isreal(f)
+                    fprintf('\nCurrent channel combination is complex: %d, %d, didnt work!\n', chan1, chan2)
+                end
+
+                % Only collect f of size maz_len_f
+                gc_one(end+1,:) = squeeze(f(1,2,:)); 
+                gc_two(end+1,:) = squeeze(f(2,1,:));
+
+                sizes(end+1) = size(f,3);
+
+            catch % for intstances with unstable VAR root
+
+                fprintf('\nCurrent channel combination is of region %d: %d, %d, didnt work!\n', region, chan1, chan4)
+                errors(end+1,:) = [region 1 1];
+                continue   
+            end
         end
-
-        % Only collect f of size maz_len_f
-        gc_one(end+1,:) = squeeze(f(1,2,:)); 
-        gc_two(end+1,:) = squeeze(f(2,1,:));
-
-        sizes(end+1) = size(f,3);
-
-    catch % for intstances with unstable VAR root
-
-        fprintf('\nCurrent channel combination is of region %d: %d, %d, didnt work!\n', region, chan1, chan4)
-        errors(end+1,:) = [region 1 1];
-        continue   
     end
         
     gc_forward{end+1} = gc_one;
