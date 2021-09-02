@@ -1,6 +1,6 @@
 %% Set up paths
-addpath('/home/12297127/cls_thesis/neuro_thesis/cls_thesis/gc_hierarchies/')
-addpath('/home/12297127/cls_thesis/neuro_thesis/cls_thesis/helper_functions/')
+addpath('/home/12297127/cls_thesis/gc_hierarchies/')
+addpath('/home/12297127/cls_thesis/helper_functions/')
 addpath('/home/12297127/matlab/MVGC');
 addpath('/home/cbosman1/matlab/fieldtrip/');
 
@@ -218,6 +218,6 @@ han.XLabel.Visible = 'on';
 han.YLabel.Visible = 'on';
 ylabel(han,'Granger Causality');xlabel(han, 'Frequency (Hz)');
 title(han,sprintf('%s Granger Causeality of Regions Against all Other \n', monkey));
-saveas(gcf,'/home/12297127/cls_thesis/neuro_thesis/cls_thesis/server_files/results/one_v_all.fig');
+saveas(gcf,'/home/12297127/cls_thesis/server_files/results/kurt_one_v_all.fig');
 clear all_AttIn;
-save('/home/12297127/cls_thesis/neuro_thesis/cls_thesis/server_files/results/gc_one_v_all');
+save('/home/12297127/cls_thesis/server_files/results/gc_one_v_all');
