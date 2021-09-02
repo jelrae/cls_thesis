@@ -267,6 +267,7 @@ trial_std = std(in_trials,0, 2);
 % A8L_regions = {'A08','A07','A09','A08','O04','O03','O06','O05','O07','O06','O08','O07','O02','O01','O03','O02'};
 A8L_regions = {'A08','A07','O06','O05','O07','O02','O01','O03'};
 
+
 power_check(dataAttIn, A8L_regions);
 
 % %Data viewing in FT

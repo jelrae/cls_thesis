@@ -17,7 +17,7 @@ monkey = 'kurt';
 %% Parameters
 
 regmode   = 'OLS';  % VAR model estimation regression mode ('OLS', 'LWR' or empty for default)
-icregmode = 'LWR';  % information criteria regression mode ('OLS', 'LWR' or empty for default) OG LWR
+icregmode = 'OLS';  % information criteria regression mode ('OLS', 'LWR' or empty for default) OG LWR
 
 model_order    = 'AIC';  % model order to use ('actual', 'AIC', 'BIC' or supplied numerical value)
 % morder    = 'AIC'; 
@@ -81,10 +81,10 @@ for region = 1 : length(regions)
     % Cycle over the channels for each of the two (all regions and current)
     % for testing purposes we are just going to do one of each and try to
     % plot
-%     for chan_all = 1 : 2
-%         for chan_cur = 1 : 2
-    for chan_all = 1 : num_chan_all
-        for chan_cur = 1 : num_chan_cur
+    for chan_all = 1 : 2
+        for chan_cur = 1 : 2
+%     for chan_all = 1 : num_chan_all
+%         for chan_cur = 1 : num_chan_cur
             try
                 fprintf('\nCurrent channel combination for region %s is: %d, %d\n', region_names(region), chan_cur, chan_all)
                 region_comp = cat(1, current_region(chan_cur,:,:), all_regions(chan_all,:,:));
@@ -223,6 +223,6 @@ han.XLabel.Visible = 'on';
 han.YLabel.Visible = 'on';
 ylabel(han,'Granger Causality');xlabel(han, 'Frequency (Hz)');
 title(han,sprintf('%s Granger Causeality of Regions Against all Other \n', monkey));
-saveas(gcf,'C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/server_files/results/v1v4.fig');
-clear all_AttIn;
-save('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/server_files/results/gc_one_v_all');
+saveas(gcf,'C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/server_files/results/v1v4.fig')
+clear all_AttIn
+save('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/server_files/results/g'
