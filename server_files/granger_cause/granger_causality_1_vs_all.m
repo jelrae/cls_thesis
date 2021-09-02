@@ -82,10 +82,10 @@ for region = 1 : length(regions)
     % Cycle over the channels for each of the two (all regions and current)
     % for testing purposes we are just going to do one of each and try to
     % plot
-%     for chan_all = 1 : 2
-%         for chan_cur = 1 : 2
-    for chan_all = 1 : num_chan_all
-        for chan_cur = 1 : num_chan_cur
+    for chan_all = 1 : 2
+        for chan_cur = 1 : 2
+%     for chan_all = 1 : num_chan_all
+%         for chan_cur = 1 : num_chan_cur
             try
                 fprintf('\nCurrent channel combination for region %s is: %d, %d\n', region_names(region), chan_cur, chan_all)
                 region_comp = cat(1, current_region(chan_cur,:,:), all_regions(chan_all,:,:));
