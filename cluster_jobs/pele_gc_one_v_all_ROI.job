@@ -4,7 +4,7 @@
 #SBATCH --error=/home/12297127/cls_thesis/cluster_error_files/pele_one_vs_all.err
 #SBATCH --mail-user 12297127@student.uva.nl
 #SBATCH --mail-type=ALL
-#SBATCH --mem=128G
+#SBATCH --mem=96G
 
 module load matlab
 
