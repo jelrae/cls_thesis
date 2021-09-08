@@ -1,6 +1,6 @@
 #!/bin/sh
 #SBATCH -J jordan_gc1_one_vs_all
-#SBATCH --output=/home/12297127/cls_thesis/cluster_output_files/tone_vs_all.out
+#SBATCH --output=/home/12297127/cls_thesis/cluster_output_files/one_vs_all.out
 #SBATCH --error=/home/12297127/cls_thesis/cluster_error_files/one_vs_all.err
 #SBATCH --mail-user 12297127@student.uva.nl
 #SBATCH --mail-type=ALL

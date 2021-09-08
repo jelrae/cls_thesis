@@ -1,0 +1,906 @@
+[mvgc startup] WARNING: Control System Toolbox(TM) does not seem to be present.
+[mvgc startup]          Will use slower scripted routines (see utils/control directory).
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite
+  WARNING: residuals covariance not positive definite

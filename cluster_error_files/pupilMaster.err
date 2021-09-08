@@ -1,0 +1,60 @@
+[mvgc startup] WARNING: Control System Toolbox(TM) does not seem to be present.
+[mvgc startup]          Will use slower scripted routines (see utils/control directory).
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+WARNING: frequency resolution too low - fft will truncate!
+{Error using saveas (line 129)
+Invalid or missing path: /home/12297127/figs/gc_basic/v1v4.fig
+
+Error in gc_cluster (line 159)
+saveas(gcf,'/home/12297127/figs/gc_basic/v1v4.fig')
+} 

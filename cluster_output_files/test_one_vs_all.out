@@ -1,0 +1,177 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+[Warning: Name is nonexistent or not a directory:
+/home/12297127/cls_thesis/gc_hierarchies] 
+[> In path (line 109)
+  In addpath (line 88)
+  In granger_causality_1_vs_all (line 2)] 
+[mvgc startup] Initialising MVGC toolbox version 1.0
+[mvgc startup] Added MVGC root directory /home/12297127/matlab/MVGC and subdirectories to path
+[mvgc startup] All MVGC 'mex' files for your platform exist
+[mvgc startup] Statistics Toolbox(TM) seems to be present.
+[mvgc startup] Signal Processing Toolbox(TM) seems to be present.
+[mvgc startup] Random number generator initialised
+[mvgc startup] All warnings enabled
+[mvgc startup] Initialisation complete (you may re-run 'startup' at any time)
+[mvgc startup] Type 'helpon' to get started
+[Warning: The file
+'/home/12297127/cls_thesis/server_files/granger_cause/granger_causality_1_vs_all.m'
+could not be cleared because it contains MATLAB code that is currently
+executing.] 
+[> In granger_causality_1_vs_all (line 11)] 
+[Warning: The file
+'/home/12297127/cls_thesis/server_files/granger_cause/granger_causality_1_vs_all.m'
+could not be cleared because it contains MATLAB code that is currently
+executing.] 
+[> In granger_causality_1_vs_all (line 11)] 
+[Warning: The file
+'/home/12297127/cls_thesis/server_files/granger_cause/granger_causality_1_vs_all.m'
+could not be cleared because it contains MATLAB code that is currently
+executing.] 
+[> In granger_causality_1_vs_all (line 11)] 
+starting
+the call to "ft_selectdata" took 2 seconds and required the additional allocation of an estimated 423 MB
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 1 MB
+
+Current channel combination for region a7A is: 1, 1
+
+using AIC best model order = 7
+
+Current channel combination for region a7A is: 2, 1
+
+using AIC best model order = 8
+
+Current channel combination for region a7A is: 1, 2
+
+Current channel combination is of region 1: 1, 2, was not pos def for chol!
+
+Current channel combination for region a7A is: 2, 2
+
+using AIC best model order = 8
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 3 MB
+
+Current channel combination for region a8M is: 1, 1
+
+using AIC best model order = 7
+
+Current channel combination for region a8M is: 2, 1
+
+using AIC best model order = 7
+
+Current channel combination for region a8M is: 1, 2
+
+using AIC best model order = 7
+
+Current channel combination for region a8M is: 2, 2
+
+using AIC best model order = 8
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 0 MB
+
+Current channel combination for region DP is: 1, 1
+
+using AIC best model order = 8
+
+Current channel combination for region DP is: 2, 1
+
+using AIC best model order = 7
+
+Current channel combination for region DP is: 1, 2
+
+using AIC best model order = 8
+
+Current channel combination for region DP is: 2, 2
+
+using AIC best model order = 7
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 1 MB
+
+Current channel combination for region TEO is: 1, 1
+
+using AIC best model order = 7
+
+Current channel combination for region TEO is: 2, 1
+
+using AIC best model order = 7
+
+Current channel combination for region TEO is: 1, 2
+
+using AIC best model order = 7
+
+Current channel combination for region TEO is: 2, 2
+
+using AIC best model order = 7
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 0 MB
+
+Current channel combination for region V4 is: 1, 1
+
+using AIC best model order = 7
+
+Current channel combination for region V4 is: 2, 1
+
+using AIC best model order = 7
+
+Current channel combination for region V4 is: 1, 2
+
+using AIC best model order = 7
+
+Current channel combination for region V4 is: 2, 2
+
+using AIC best model order = 7
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 0 MB
+
+Current channel combination for region a8L is: 1, 1
+
+Current channel combination is of region 6: 1, 1, was not pos def for chol!
+
+Current channel combination for region a8L is: 2, 1
+
+using AIC best model order = 7
+
+Current channel combination for region a8L is: 1, 2
+
+using AIC best model order = 7
+
+Current channel combination for region a8L is: 2, 2
+
+using AIC best model order = 7
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 0 MB
+
+Current channel combination for region V2 is: 1, 1
+
+using AIC best model order = 9
+
+Current channel combination for region V2 is: 2, 1
+
+using AIC best model order = 9
+
+Current channel combination for region V2 is: 1, 2
+
+using AIC best model order = 9
+
+Current channel combination for region V2 is: 2, 2
+
+using AIC best model order = 9
+the call to "ft_selectdata" took 0 seconds and required the additional allocation of an estimated 1 MB
+
+Current channel combination for region V1 is: 1, 1
+
+using AIC best model order = 9
+
+Current channel combination for region V1 is: 2, 1
+
+using AIC best model order = 9
+
+Current channel combination for region V1 is: 1, 2
+
+using AIC best model order = 7
+
+Current channel combination for region V1 is: 2, 2
+
+using AIC best model order = 9
