@@ -8,4 +8,4 @@
 
 module load matlab
 
-matlab -nodisplay -r "addpath /home/12297127/cls_thesis/server_files/granger_cause/; granger_causality_1_vs_1; quit"
+matlab -nodisplay -r "addpath /home/12297127/cls_thesis/server_files/granger_cause/; kurt_granger_causality_1_vs_1; quit"
