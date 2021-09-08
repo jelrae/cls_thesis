@@ -44,8 +44,9 @@ clear all;
 close all;clc;
 ptic('starting\n')
 
-load('/home/12297127/data/no_bad_channels/kurt_p_all_AttIn.mat')
-monkey = 'kurt';
+monkey = 'pele';
+load(sprintf('/home/12297127/data/no_bad_channels/%s_p_all_AttIn.mat', monkey))
+
 
 %% Parameters
 
@@ -174,4 +175,4 @@ for r1 = 1 : length(regions)
 end
 
 clear all_AttIn;
-save('/home/12297127/cls_thesis/server_files/results/gc_one_v_all');
+save(sprintf('/home/12297127/cls_thesis/server_files/results/%s_gc_one_v_one', monkey));
