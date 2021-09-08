@@ -1,0 +1,6 @@
+tr = 1;
+inf_trials=find(BhvInfo.ConditionNumber==3|BhvInfo.ConditionNumber==4);
+trial_error=BhvInfo.TrialError; % 0 = 'Correct Response' (chose side with higher expected value),
+inf_responded_trials=inf_trials(trial_error(inf_trials)==0|trial_error(inf_trials)==6);
+ct=inf_responded_trials(tr);
+
