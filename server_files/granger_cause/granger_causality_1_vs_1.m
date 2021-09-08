@@ -154,7 +154,6 @@ for r1 = 1 : length(regions)
                             fprintf('\nCurrent channel combination is complex %s, %s: %d, %d, was not pos def for chol!\n', region_names(r1), region_names(r2), chan1, chan2)
                         end
 
-                        % Only collect f of size maz_len_f
                         gc_one(end+1,:) = squeeze(f(1,2,:)); 
                         gc_two(end+1,:) = squeeze(f(2,1,:));
 
