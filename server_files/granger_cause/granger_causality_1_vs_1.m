@@ -108,71 +108,67 @@ for r1 = 1 : length(regions)
         num_r2 = size(region2, 1);
         
         % Check if the regions are the same, if they are, skip!
-        if r1 ~= r2
-            for chan1 = 1 : 2
-                for chan2 = 1 : 2
-%             for chan1 = 1 : num_r1
-%                 for chan2 = 1 : num_r2
-                    try
-                        fprintf('\nCurrent channel combination for regions %s %s is: %d, %d\n', region_names(r1), region_names(r2), chan1, chan2)
-                        region_comp = cat(1, region1(chan1,:,:), region2(chan2,:,:));
+        for chan1 = 1 : num_r1
+            for chan2 = 1 : num_r2
+                try
+                    fprintf('\nCurrent channel combination for regions %s %s is: %d, %d\n', region_names(r1), region_names(r2), chan1, chan2)
+                    region_comp = cat(1, region1(chan1,:,:), region2(chan2,:,:));
 
-                        %% Start the calcs of granger cause
-                        % VAR - channel combinations 
-                        [aic,bic,moaic,mobic] = tsdata_to_infocrit(region_comp,momax,icregmode, verb);
+                    %% Start the calcs of granger cause
+                    % VAR - channel combinations 
+                    [aic,bic,moaic,mobic] = tsdata_to_infocrit(region_comp,momax,icregmode, verb);
 
-                        if strcmpi(model_order,'AIC')
-                            morder = moaic;
-                            fprintf('\nusing AIC best model order = %d\n',morder);
-                        elseif strcmpi(model_order,'BIC')
-                            morder = mobic;
-                            fprintf('\nusing BIC best model order = %d\n',morder);
-                        else
-                            fprintf('\nusing specified model order = %d\n',morder);
-                            morder = model_order;
-                        end
-
-                        [A,SIG] = tsdata_to_var(region_comp,morder,regmode);
-
-                        % Check for failed regression
-                        assert(~isbad(A),'VAR estimation failed');
-
-                        % Autocovariance calculation
-                        [G,info] = var_to_autocov(A,SIG,acmaxlags);
-                    catch 
-                        fprintf('\nCurrent channel combination is of regions %s %s: %d, %d, was not pos def for chol!\n', region_names(r1), region_names(r2), chan1, chan2)
-                        bad_combinations(end+1,:) = [r1 r2 chan1 chan2];
+                    if strcmpi(model_order,'AIC')
+                        morder = moaic;
+                        fprintf('\nusing AIC best model order = %d\n',morder);
+                    elseif strcmpi(model_order,'BIC')
+                        morder = mobic;
+                        fprintf('\nusing BIC best model order = %d\n',morder);
+                    else
+                        fprintf('\nusing specified model order = %d\n',morder);
+                        morder = model_order;
                     end
 
-                    try
-        %                 var_info(info,true); % report results (and bail out on error)
+                    [A,SIG] = tsdata_to_var(region_comp,morder,regmode);
 
-                        f= autocov_to_spwcgc(G,fres);
-                        % Check for failed spectral GC calculation
-                        assert(~isbad(f,false),'spectral GC calculation failed');
+                    % Check for failed regression
+                    assert(~isbad(A),'VAR estimation failed');
 
-                        if ~isreal(f)
-                            fprintf('\nCurrent channel combination is complex %s, %s: %d, %d, was not pos def for chol!\n', region_names(r1), region_names(r2), chan1, chan2)
-                        end
-
-                        gc_one(end+1,:) = squeeze(f(1,2,:)); 
-                        gc_two(end+1,:) = squeeze(f(2,1,:));
-
-                        sizes(end+1) = size(f,3);
-
-                    catch % for intstances with unstable VAR root
-
-                        fprintf('\nCurrent channel combination of regions %s, %s: %d, %d, didnt work!\n', region_names(r1), region_names(r2), chan1, chan2)
-                        errors(end+1,:) = [r1 r2 chan1 chan2];
-                        continue   
-                    end 
+                    % Autocovariance calculation
+                    [G,info] = var_to_autocov(A,SIG,acmaxlags);
+                catch 
+                    fprintf('\nCurrent channel combination is of regions %s %s: %d, %d, was not pos def for chol!\n', region_names(r1), region_names(r2), chan1, chan2)
+                    bad_combinations(end+1,:) = [r1 r2 chan1 chan2];
                 end
+
+                try
+    %                 var_info(info,true); % report results (and bail out on error)
+
+                    f= autocov_to_spwcgc(G,fres);
+                    % Check for failed spectral GC calculation
+                    assert(~isbad(f,false),'spectral GC calculation failed');
+
+                    if ~isreal(f)
+                        fprintf('\nCurrent channel combination is complex %s, %s: %d, %d, was not pos def for chol!\n', region_names(r1), region_names(r2), chan1, chan2)
+                    end
+
+                    gc_one(end+1,:) = squeeze(f(1,2,:)); 
+                    gc_two(end+1,:) = squeeze(f(2,1,:));
+
+                    sizes(end+1) = size(f,3);
+
+                catch % for intstances with unstable VAR root
+
+                    fprintf('\nCurrent channel combination of regions %s, %s: %d, %d, didnt work!\n', region_names(r1), region_names(r2), chan1, chan2)
+                    errors(end+1,:) = [r1 r2 chan1 chan2];
+                    continue   
+                end 
             end
-            gc_forward{end+1} = gc_one;
-            gc_backward{end+1} = gc_two;
         end
-    end    
-end
+        gc_forward{end+1} = gc_one;
+        gc_backward{end+1} = gc_two;
+    end
+end    
 
 clear all_AttIn;
 save(sprintf('/home/12297127/cls_thesis/server_files/results/%s_gc_one_v_one', monkey));
