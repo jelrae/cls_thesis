@@ -44,7 +44,7 @@ clear all;
 close all;clc;
 ptic('starting\n')
 
-monkey = 'pele';
+monkey = 'kurt';
 load(sprintf('/home/12297127/data/no_bad_channels/%s_p_all_AttIn.mat', monkey))
 
 
