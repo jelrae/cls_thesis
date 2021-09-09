@@ -9,15 +9,17 @@ ft_defaults
 format short;
 clear all;
 close all;clc;
-disp('starting\n')
+disp('starting')
 
 monkey = 'pele';
 
 if strcmp(monkey, 'kurt')
     load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_gc_one_v_all.mat')
 else
-    load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_gc_one_v_all.mat')
+    load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_gc_one_v_all.mat')
 end
+
+disp(
 
 figure(1);
 
