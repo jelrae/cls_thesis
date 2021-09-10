@@ -52,12 +52,22 @@ test_theta_matrix = repmat(test_theta_range, size(test_theta,1),1);
 
 [M_t,I_t] = max(test_theta,[],2);
 
-p = polyfit(test_theta, test_theta_range, 2);
+p = polyfit(test_theta_matrix', test_theta', 2);
 
-test_beta = test_forward(:,beta_bottom:beta_top);
-test_beta_range = x_range(beta_bottom:beta_top);
-test_beta_matrix = repmat(test_beta_range, size(test_beta,1),1);
+fitted = polyval(p, test_theta_range);
 
-[M_b,I_b] = max(test_beta,[],2);
+% dtheta = []
+% 
+% for i = 2:length(test_theta_range)
+%     dtheta(end+1,:) = 
+% end
 
-p = polyfit(test_beta, test_beta_matrix, 2);
+plot(test_theta_range, fitted);
+
+% test_beta = test_forward(:,beta_bottom:beta_top);
+% test_beta_range = x_range(beta_bottom:beta_top);
+% test_beta_matrix = repmat(test_beta_range, size(test_beta,1),1);
+% 
+% [M_b,I_b] = max(test_beta,[],2);
+% 
+% p = polyfit(test_beta, test_beta_matrix, 2);
