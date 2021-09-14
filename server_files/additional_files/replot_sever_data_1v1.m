@@ -12,11 +12,20 @@ close all;clc;
 disp('starting')
 
 monkey = 'kurt';
+model_free = 0;
 
-if strcmp(monkey, 'kurt')
-    load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_gc_one_v_one.mat')
+if model_free
+    if strcmp(monkey, 'kurt')
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_model_free_gc_one_v_one.mat')
+    else
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_model_free_gc_one_v_one.mat')
+    end
 else
-    load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_gc_one_v_all.mat')
+    if strcmp(monkey, 'kurt')
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_gc_one_v_one.mat')
+    else
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_gc_one_v_one.mat')
+    end
 end
 
 disp("done loading")
@@ -72,8 +81,8 @@ for r1 = 1 : length(regions)
             plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on
             legend('FF','FB');legend boxoff;
             xlim([0 140]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
-            ylim([0 zgc]);
-            title(sprintf("%s v.s. %s Full", region_names(r1), region_names(r2)));
+            ylim([0 real(zgc)]);
+            title(sprintf("%s v.s. %s", region_names(r1), region_names(r2)));
             set(gca,'Layer','top');
             compare_counter = compare_counter +1;
             plot_counter = plot_counter+1;

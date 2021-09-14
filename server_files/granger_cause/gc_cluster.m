@@ -118,9 +118,13 @@ for chan1=1:num_chan_v1
                 fprintf('\nCurrent channel combination is complex: %d, %d, didnt work!\n', chan1, chan4)
             end
             
-            % Only collect f of size maz_len_f
-            gc_one(end+1,:) = squeeze(f(1,2,:)); 
-            gc_two(end+1,:) = squeeze(f(2,1,:));
+%                     %Old version
+%                     gc_one(end+1,:) = squeeze(f(1,2,:)); 
+%                     gc_two(end+1,:) = squeeze(f(2,1,:));
+            % Updated from source code first dim is to, second is
+            % from
+            gc_one(end+1,:) = squeeze(f(2,1,:)); 
+            gc_two(end+1,:) = squeeze(f(1,2,:));
             
             sizes(end+1) = size(f,3);
 

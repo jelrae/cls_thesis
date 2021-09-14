@@ -11,12 +11,21 @@ clear all;
 close all;clc;
 disp('starting')
 
-monkey = 'kurt';
+monkey = 'pele';
+model_free = 1;
 
-if strcmp(monkey, 'kurt')
-    load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_model free_gc_one_v_all.mat')
+if model_free
+    if strcmp(monkey, 'kurt')
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_model_free_gc_one_v_all.mat')
+    else
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_model_free_gc_one_v_all.mat')
+    end
 else
-    load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_gc_one_v_all.mat')
+    if strcmp(monkey, 'kurt')
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/kurt/kurt_gc_one_v_all.mat')
+    else
+        load('/home/jordan/neuro_thesis/cls_thesis/server_files/results/pele/pele_gc_one_v_all.mat')
+    end
 end
 
 disp("done loading")
