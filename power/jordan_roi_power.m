@@ -1,6 +1,7 @@
 %% Initalize
 
-addpath('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/helper_functions/')
+% addpath('C:/Users/Jordan/Documents/cls_thesis/neuro_thesis/cls_thesis/helper_functions/')
+addpath('/home/jordan/neuro_thesis/cls_thesis/helper_functions/')
 set_paths_roi;
 
 clear all
