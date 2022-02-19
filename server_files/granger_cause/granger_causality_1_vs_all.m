@@ -12,7 +12,7 @@ clear all;
 close all;clc;
 ptic('starting\n')
 
-load('/home/12297127/data/no_bad_channels/kurt_p_v1_AttIn.mat')
+load('/home/12297127/data/no_bad_channels/kurt_p_all_AttIn.mat')
 monkey = 'kurt';
 
 %% Parameters

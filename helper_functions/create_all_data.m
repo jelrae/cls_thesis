@@ -4,7 +4,7 @@ clc
 monkeys = {'pele' 'kurt'};
 % des_datas = {'baseline', 'post'}; 
 % monkeys = {'kurt'};
-des_datas = {'post'}; 
+des_datas = {'baseline'}; 
 data_used = 'all';
 bipolar = true;
 bad_chanel_remove = true;

@@ -3,6 +3,7 @@ addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\gc_hierarchies\')
 %addpath('D:/MATLAB/mvgc_v1.0')
 startup
 addpath('C:\Users\Jordan\Documents\cls_thesis\matlab\fieldtrip-20210411')
+addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\cls_thesis\helper_functions\')
 ft_defaults
 
 format short;
@@ -28,8 +29,9 @@ if load_data
     % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_lowpass_post_data\pele_p_v4_AttIn.mat')
 
     % Load the full kurt data - Problem child
-    load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
-    load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v4_AttIn.mat')
+%     load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
+%     load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v4_AttIn.mat')
+    load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_all_AttIn.mat')
 else
     % Do the prepreocessing to get this shit in!
     % Define and set analysis objectives and specifics:
@@ -72,6 +74,21 @@ else
     v1_AttIn =  ft_selectdata(roi_cfg, dataAttIn);
     v4_AttIn =  ft_selectdata(roi_cfg2, dataAttIn);
 end
+
+monkey = 'kurt';
+vbm_rois;
+
+cfg = [];
+cfg.channel = DP;
+
+v1_AttIn = ft_selectdata(cfg,all_AttIn);
+
+cfg.channel = TEO;
+
+v4_AttIn = ft_selectdata(cfg,all_AttIn);
+
+clear all_AttIn
+
 % Get the trial part of the structure with the data AttIn
 v1_in_preclean = v1_AttIn.trial;
 v4_in_preclean = v4_AttIn.trial;
@@ -117,9 +134,9 @@ v4_in = cat(3,v4_in_preclean{:});
 %     end
 % end
 
-% Add some random noise to hope to help...
-v1_in = v1_in +(.25 .* randn(size(v1_in)));
-v4_in = v4_in +(.25 .* randn(size(v4_in)));
+% % Add some random noise to hope to help...
+% v1_in = v1_in +(.25 .* randn(size(v1_in)));
+% v4_in = v4_in +(.25 .* randn(size(v4_in)));
 
 clear v1_in_preclean v4_in_preclean
 clear max_val_1 max_val_4 min_val_1 min_val_4
@@ -194,12 +211,14 @@ for chan1=1:num_chan_v1
         ptoc;
         % find the autocov
         ptic('\n*** cpsd_to_autocov... ');
-        [G,q] = cpsd_to_autocov(cpsd_trial);
+        cpsd_trial = real(cpsd_trial);
+        [G,q] = cpsd_to_autocov(real(cpsd_trial));
         ptoc;
         
         try
 
             ptic('\n*** autocov_to_spwcgc... ');
+%             f= autocov_to_spwcgc(real(G),fres);
             f= autocov_to_spwcgc(G,fres);
             ptoc;
             % Check for failed spectral GC calculation
@@ -244,6 +263,6 @@ plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
 plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on;
 set(gca,'FontSize',24,'LineWidth',5,'TickLength',[0.02 0.02])
 set(gca,'box','off');legend('FF','FB');legend boxoff;
-xlim([0 fnq]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
-ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
+xlim([0 140]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
+% ylim([0 zgc]);title('V1-V4');set(gca,'Layer','top');
 ylabel('Granger causality');xlabel('Frequency (Hz)');

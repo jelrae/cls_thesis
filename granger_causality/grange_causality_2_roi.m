@@ -13,8 +13,8 @@ ptic('starting\n')
 %% Load data and restructure
 
 % Load the full AttIn pele data, this seems to work fine OG channels
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
-load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
+% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v1_AttIn.mat')
+% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_post_data\pele_p_v4_AttIn.mat')
 % Outlier channels removed
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_no_bad_chan_post_data\pele_p_v1_AttIn.mat')
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bipolar_no_bad_chan_post_data\pele_p_v4_AttIn.mat')
@@ -27,8 +27,8 @@ load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_pele_data\bi
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v1_AttIn.mat')
 % load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_post_data\kurt_p_v4_AttIn.mat')
 % Outlier channels removed
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_no_bad_chan_post_data\kurt_p_v1_AttIn.mat')
-% load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_no_bad_chan_post_data\kurt_p_v4_AttIn.mat')
+load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_no_bad_chan_post_data\kurt_p_v1_AttIn.mat')
+load('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\data\monkey_kurt_data\bipolar_no_bad_chan_post_data\kurt_p_v4_AttIn.mat')
 
 % Get the trial part of the structure with the data AttIn
 v1_in_preclean = v1_AttIn.trial;

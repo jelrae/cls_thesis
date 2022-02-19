@@ -1,4 +1,4 @@
-addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\gc_hierarchies\helper_functions\')
+addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\cls_thesis\helper_functions\')
 set_paths_roi;
 
 clear all
@@ -24,6 +24,13 @@ roi = V1;
 %Define region of interest 2
 roi_2 = V4;
 roi_combine = [roi roi_2];
+roi_list = cell(0,2); %Nx2 cellular array
+
+for i = V1
+    for j = V4
+        roi_list(end+1,:) = {i,j};
+    end
+end
 
 %% Create / load data
 
