@@ -52,6 +52,15 @@ gc_backward = {};
 %% Identify the regions
 fig_6_ROIS;
 
+if strcmp(monkey, 'kurt')
+    monkey_caps = 'Kurt';
+    % Bad channels giving power in 100's
+    a7A(6) = [];
+    a7A(5) = [];
+else
+    monkey_caps = 'Pele';
+end
+
 %% Do GC
 % Get all the regions
 roi_cfg = [];
@@ -88,10 +97,11 @@ for region = 1 : length(regions)
                 fprintf('\nCurrent channel combination for region %s is: %d, %d\n', region_names(region), chan_cur, chan_all)
                 region_comp = cat(1, current_region(chan_cur,:,:), all_regions(chan_all,:,:));
                 
+                f_res_bucket_width = fs/size(region_comp,2);
+                fres = floor(fnq/f_res_bucket_width);
                 %% Start the calcs of granger cause
                 % Find the cpsd
-
-                cpsd_trial = tsdata_to_cpsd(region_comp,fres);
+                cpsd_trial = tsdata_to_cpsd(region_comp, fres,'MT', size(region_comp, 2), floor(size(region_comp, 2)/2),3, 4);
 
                 % find the autocov
 
@@ -140,4 +150,4 @@ for region = 1 : length(regions)
 end
 
 clear all_AttIn;
-save('/home/12297127/cls_thesis/server_files/results/pele_model free_gc_one_v_all');
+save('/home/12297127/cls_thesis/server_files/results/pele_new_model free_gc_one_v_all');

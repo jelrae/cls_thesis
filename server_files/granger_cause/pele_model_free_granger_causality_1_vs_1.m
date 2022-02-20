@@ -85,8 +85,17 @@ gc_backward = {};
 %% Identify the regions
 fig_6_ROIS;
 
+if strcmp(monkey, 'kurt')
+    monkey_caps = 'Kurt';
+    % Bad channels giving power in 100's
+    a7A(6) = [];
+    a7A(5) = [];
+else
+    monkey_caps = 'Pele';
+end
+
 %% Do GC
-for r1 = 1 : length(regions)
+for r1 = 1 : length(regions)-1
     % Get the regions 
     roi_cfg = [];
     roi_cfg.channel = regions{r1};
@@ -95,7 +104,7 @@ for r1 = 1 : length(regions)
     region1 = cat(3,region1{:});
     num_r1 = size(region1, 1);
     % Cycle over the channels for each of the two regions
-    for r2 = 1 : length(regions)
+    for r2 = r1+1 : length(regions)
         %Reset the gc storing arrays
         gc_one    = [];
         gc_two    = [];
@@ -114,10 +123,11 @@ for r1 = 1 : length(regions)
                     fprintf('\nCurrent channel combination for regions %s %s is: %d, %d\n', region_names(r1), region_names(r2), chan1, chan2)
                     region_comp = cat(1, region1(chan1,:,:), region2(chan2,:,:));
 
+                    f_res_bucket_width = fs/size(region_comp,2);
+                    fres = floor(fnq/f_res_bucket_width);
                     %% Start the calcs of granger cause
                     % Find the cpsd
-
-                    cpsd_trial = tsdata_to_cpsd(region_comp,fres);
+                    cpsd_trial = tsdata_to_cpsd(region_comp, fres,'MT', size(region_comp, 2), floor(size(region_comp, 2)/2),3, 4);
 
                     % find the autocov
 
@@ -162,4 +172,4 @@ for r1 = 1 : length(regions)
 end    
 
 clear all_AttIn;
-save(sprintf('/home/12297127/cls_thesis/server_files/results/%smodel_free_gc_one_v_one', monkey));
+save(sprintf('/home/12297127/cls_thesis/server_files/results/%s_new_model_free_gc_one_v_one', monkey));
