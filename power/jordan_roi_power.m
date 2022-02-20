@@ -12,23 +12,24 @@ ft_defaults
 load_data = true; 
 
 % Declare your Monkey!
-monkey = 'kurt';
-% monkey = 'pele';
+% monkey = 'kurt';
+monkey = 'pele';
 
 % % Define and set analysis objectives and specifics origional:
-% exp_desc = 'V1 compared to baseline (loglog)';
-% roi_string = 'V1'; % Set for plotting
-% for investigation of "bad region"
+exp_desc = 'V1 compared to baseline';
+roi_string = 'V1'; % Set for plotting
 
-exp_desc = sprintf('%s a8L attin compared to attout (loglog)', monkey);
-roi_string = "a8L"; % Set for plotting
+% % for investigation of "bad region"
+% 
+% exp_desc = sprintf('%s a8L attin compared to attout (loglog)', monkey);
+% roi_string = "a8L"; % Set for plotting
 
-plot_loglog = 'yes'; % Set to yes to plot loglog
+plot_loglog = 'no'; % Set to yes to plot loglog
 
 % Run script to get ROIs specific to the monkey
 fig_6_ROIS;
 % Define region of interest
-roi = a8L;
+roi = V1;
 
 
 % for our testing purposes
@@ -148,6 +149,69 @@ elseif strcmp(plot_loglog,'no')
     plot(powtap8_AttOut.freq, (mean(powtap8_AttOut.powspctrm(:,:))),...
     'DisplayName', sprintf(AttOut_label, roi_string))
 end
+
+
+% adding in baselines
+
+load(sprintf('%s_b_all_AttIn.mat',monkey));
+
+cnd = {'Baseline'};
+
+for z=1:length(tapsmofrq)
+    pow_cfg.tapsmofrq = tapsmofrq(z);
+    pow_cfg.foilim = foilim{z};
+    if z==3
+        pow_cfg.taper = 'hanning';
+    else
+        pow_cfg.taper = 'dpss';
+    end
+
+    for n = 1:length(cnd)
+        tmp_angle = [];
+        tmp = [];
+        tmp_pow = [];
+        sprintf('Condition %s',cnd{n})
+%         eval(sprintf('tmp_dat = all_%s;',cnd{n}))
+        
+        tmp = ft_freqanalysis(pow_cfg,all_AttIn);
+        eval(sprintf('freq_tap%d_%s=tmp;',tapsmofrq(z),cnd{n}));
+    end
+end
+
+clear all_AttIn
+
+%% Freqdescriptives
+cnd = {'Baseline'};
+tapsmofrq = [8 4 2];
+centerfrqs = {[40:8:120],[12:6:48],[4:2:12]};
+freqwin = [8 6 2];
+
+pow2_cfg = [];
+pow2_cfg.psi = 'no'; % Phase slope Index
+pow2_cfg.channel = roi;
+pow2_cfg.jackknife = 'yes';
+pow2_cfg.avgChOI = 'yes';
+
+%% Obtaining and plotting the power analysis
+
+% Frequency of interest limits
+freq_tap8_Baseline.freq;
+
+% Power
+powtap8_Baseline = ft_freqdescriptives(pow2_cfg, freq_tap8_Baseline);
+hold on
+% Plot graph AttIn
+Baseline_label = 'Baseline %s';
+% 
+% loglog
+if strcmp(plot_loglog,'yes')
+    loglog(powtap8_Baseline.freq,(mean(powtap8_Baseline.powspctrm(:,:))), ...
+        'DisplayName', sprintf(Baseline_label, roi_string))
+elseif strcmp(plot_loglog,'no')
+    plot(powtap8_Baseline.freq, (mean(powtap8_Baseline.powspctrm(:,:))),...
+    'DisplayName', sprintf(Baseline_label, roi_string))
+end
+hold on
 
 % Plotting labels
 ylabel('Power')

@@ -107,7 +107,7 @@ for r1 = 1 : length(regions)
         region2 = cat(3,region2{:});
         num_r2 = size(region2, 1);
         
-        % Check if the regions are the same, if they are, skip!
+        % Check if the regions are the same, if they are, skip!l
         for chan1 = 1 : num_r1
             for chan2 = 1 : num_r2
                 try
@@ -147,7 +147,7 @@ for r1 = 1 : length(regions)
                     f= autocov_to_spwcgc(G,fres);
                     % Check for failed spectral GC calculation
                     assert(~isbad(f,false),'spectral GC calculation failed');
-
+                    
                     if ~isreal(f)
                         fprintf('\nCurrent channel combination is complex %s, %s: %d, %d, was not pos def for chol!\n', region_names(r1), region_names(r2), chan1, chan2)
                     end

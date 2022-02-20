@@ -11,8 +11,8 @@ clear all;
 close all;clc;
 disp('starting')
 
-monkey = 'pele';
-model_free = 1;
+monkey = 'kurt';
+model_free = 0;
 
 if model_free
     if strcmp(monkey, 'kurt')

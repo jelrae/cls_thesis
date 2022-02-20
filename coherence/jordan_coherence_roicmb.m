@@ -1,4 +1,5 @@
-addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\gc_hierarchies\helper_functions\')
+% addpath('C:\Users\Jordan\Documents\cls_thesis\neuro_thesis\gc_hierarchies\helper_functions\')
+addpath('/home/jordan/neuro_thesis/cls_thesis/helper_functions/')
 set_paths_roi;
 
 clear all
@@ -108,6 +109,7 @@ elseif strcmp(monkey,'pele')
     xlim([40 100]);
     ylim([0 0.14]);
 end
+
 hold on
 % AttOut 
 AttOut_label = 'AttOut %s';

@@ -11,6 +11,8 @@ clear all;
 close all;clc;
 disp('starting')
 
+%% load data
+
 monkey = 'kurt';
 model_free = 1;
 
@@ -30,17 +32,13 @@ end
 
 disp("done loading")
 
-figure(1);
+region_1 = 'V1';
+region_2 = 'V4';
 
-compare_counter = 1;
-plot_counter = 1;
-
-for r1 = 1 : length(regions)-1
+for r1 = 1 : length(regions)
     for r2 = 1 : length(regions)
-        if r1 == r2clear
-            compare_counter = compare_counter+1;
-            continue
-        else
+        if r1 == find(contains(region_names, region_1)) && r2 == find(contains(region_names,region_2))
+            compare_counter = ((r1-1)*length(region_names)) + r2;
             gc_1_ave = mean(gc_forward{compare_counter}, 1);
             gc_2_ave = mean(gc_backward{compare_counter}, 1);
 
@@ -76,29 +74,18 @@ for r1 = 1 : length(regions)-1
 %             title(sprintf("%s v.s. all Gamma", region_names(region)));
 %             set(gca,'Layer','top');
 
-            subplot(length(regions)-1, length(regions)-1, plot_counter)
-%             subplot(length(regions), length(regions), (r1-1)*length(regions) + r2)
             plot(x_range,gc_2_ave,'Color',blue,'LineWidth',3);hold on;
             plot(x_range,gc_1_ave,'Color',red,'LineWidth',3);hold on
             legend('FF','FB');legend boxoff;
             xlim([0 140]);zgc=1.1*max(max(max(gc_2_ave),max(gc_1_ave)));
-%             ylim([0 real(zgc)]);
+            ylim([0 real(zgc)]);
 %             ylim([0 20e-2]);
-            title(sprintf("%s v.s. %s", region_names(r1), region_names(r2)));
+            title(sprintf("%s Granger Causality %s v.s. %s", monkey, region_names(r1), region_names(r2)));
+            ylabel('Granger Causality');xlabel('Frequency (Hz)');
             set(gca,'Layer','top');
-%             set(gca, 'XScale', 'log')
-%             set(gca, 'YScale', 'log')
-%             xticks([0 10 100])
-%             yticks([0.0001 0.001 0.01 0.1])
-            compare_counter = compare_counter +1;
-            plot_counter = plot_counter+1;
+            break
         end
-    end 
+    end
 end
 
-han = axes(figure(1), 'visible', 'off');
-han.Title.Visible = 'on';
-han.XLabel.Visible = 'on';
-han.YLabel.Visible = 'on';
-ylabel(han,'Granger Causality');xlabel(han, 'Frequency (Hz)');
-title(han,sprintf('%s Granger Causeality of Regions Against all Other \n', monkey));
+
