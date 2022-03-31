@@ -15,6 +15,22 @@ ptic('starting\n')
 load('/home/12297127/data/no_bad_channels/pele_p_all_AttIn.mat')
 monkey = 'pele';
 
+% %% Set up paths local linux
+% addpath('/home/jordan/neuro_thesis/cls_thesis/gc_hierarchies/')
+% addpath('/home/jordan/neuro_thesis/cls_thesis/helper_functions/')
+% %addpath('D:/MATLAB/mvgc_v1.0')
+% startup
+% addpath('/home/jordan/common/matlab/fieldtrip-20210411')
+% ft_defaults
+% 
+% format short;
+% clear all;
+% close all;clc;
+% ptic('starting\n')
+% 
+% load('/home/jordan/neuro_thesis/data/monkey_pele_data/bipolar_post_data/pele_p_all_AttIn.mat')
+% monkey = 'pele';
+
 %% Parameters
 
 regmode   = 'OLS';  % VAR model estimation regression mode ('OLS', 'LWR' or empty for default)
@@ -54,24 +70,13 @@ fig_6_ROIS;
 
 if strcmp(monkey, 'kurt')
     monkey_caps = 'Kurt';
-    % Bad channels giving power in 100's
-    a7A(6) = [];
-    a7A(5) = [];
 else
     monkey_caps = 'Pele';
 end
 
-%% Do GC
-% Get all the regions
-roi_cfg = [];
-roi_cfg.channel = all_channels;
-all_regions = ft_selectdata(roi_cfg, all_AttIn);
-all_regions = all_regions.trial;
-all_regions = cat(3,all_regions{:});
-ntrials   = size(all_regions,3);     % no. trials
-nobs      = size(all_regions,2);   % no. obs per trial
+bad_channels = {};
 
-num_chan_all = size(all_regions, 1);
+%% Do GC
 
 figure(1);
 % regions(6) = [];
@@ -81,6 +86,17 @@ for region = 1 : length(regions)
     %Reset the gc storing arrays
     gc_one    = [];
     gc_two    = [];
+    bad_chans = cell(0,2);
+    % Get all the regions
+    roi_cfg = [];
+    roi_cfg.channel = setdiff(all_channels, regions{region});
+    all_regions = ft_selectdata(roi_cfg, all_AttIn);
+    all_regions = all_regions.trial;
+    all_regions = cat(3,all_regions{:});
+    ntrials   = size(all_regions,3);     % no. trials
+    nobs      = size(all_regions,2);   % no. obs per trial
+    
+    num_chan_all = size(all_regions, 1);
     % Get the regions 
     roi_cfg = [];
     roi_cfg.channel = regions{region};
@@ -99,9 +115,11 @@ for region = 1 : length(regions)
                 
                 f_res_bucket_width = fs/size(region_comp,2);
                 fres = floor(fnq/f_res_bucket_width);
+                ntappers = 4;
+                nw = (ntappers+1)/2;
                 %% Start the calcs of granger cause
                 % Find the cpsd
-                cpsd_trial = tsdata_to_cpsd(region_comp, fres,'MT', size(region_comp, 2), floor(size(region_comp, 2)/2),3, 4);
+                cpsd_trial = tsdata_to_cpsd(region_comp, fres,'MT', size(region_comp, 2), floor(size(region_comp, 2)/2),nw, ntappers);
 
                 % find the autocov
 
@@ -130,10 +148,17 @@ for region = 1 : length(regions)
 %                     gc_two(end+1,:) = squeeze(f(2,1,:));
                 % Updated from source code first dim is to, second is
                 % from
-                gc_one(end+1,:) = squeeze(f(2,1,:)); 
-                gc_two(end+1,:) = squeeze(f(1,2,:));
+                if isreal(sqrt(squeeze(f(1,2,:)))) && isreal(sqrt(squeeze(f(2,1,:))))
 
-                sizes(end+1) = size(f,3);
+                    % Only collect f of size maz_len_f
+                    gc_one(end+1,:) = squeeze(f(1,2,:)); 
+                    gc_two(end+1,:) = squeeze(f(2,1,:));
+
+                    sizes(end+1) = size(f,3);
+
+                else
+                    bad_chans(end+1,:) = {chan_all num_chan_cur};
+                end
 
             catch % for intstances with unstable VAR root
 
@@ -146,7 +171,7 @@ for region = 1 : length(regions)
     
     gc_forward{end+1} = gc_one;
     gc_backward{end+1} = gc_two;
-
+    bad_channels{end+1} = bad_chans;
 end
 
 clear all_AttIn;

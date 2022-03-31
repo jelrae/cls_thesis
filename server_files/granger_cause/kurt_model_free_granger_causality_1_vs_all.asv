@@ -19,8 +19,6 @@ cfg = [];
 cfg.keepsampleinfo = 'yes';
 all_attention = ft_appenddata(cfg, all_AttIn, all_AttOut);
 
-clear all_AttIn all_AttOut
-
 monkey = 'kurt';
 
 %% Parameters

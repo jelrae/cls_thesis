@@ -46,7 +46,13 @@ ptic('starting\n')
 
 monkey = 'pele';
 load(sprintf('/home/12297127/data/no_bad_channels/%s_p_all_AttIn.mat', monkey))
+load(sprintf('/home/12297127/data/no_bad_channels/%s_p_all_AttOut.mat', monkey))
 
+cfg = [];
+cfg.keepsampleinfo = 'yes';
+all_attention = ft_appenddata(cfg, all_AttIn, all_AttOut);
+
+clear all_AttIn all_AttOut
 
 %% Parameters
 
@@ -87,19 +93,18 @@ fig_6_ROIS;
 
 if strcmp(monkey, 'kurt')
     monkey_caps = 'Kurt';
-    % Bad channels giving power in 100's
-    a7A(6) = [];
-    a7A(5) = [];
 else
     monkey_caps = 'Pele';
 end
+
+bad_channels = {};
 
 %% Do GC
 for r1 = 1 : length(regions)-1
     % Get the regions 
     roi_cfg = [];
     roi_cfg.channel = regions{r1};
-    region1 = ft_selectdata(roi_cfg, all_AttIn);
+    region1 = ft_selectdata(roi_cfg, all_attention);
     region1 = region1.trial;
     region1 = cat(3,region1{:});
     num_r1 = size(region1, 1);
@@ -108,10 +113,11 @@ for r1 = 1 : length(regions)-1
         %Reset the gc storing arrays
         gc_one    = [];
         gc_two    = [];
+        bad_chans = cell(0,2);
         % Get the regions 
         roi_cfg = [];
         roi_cfg.channel = regions{r2};
-        region2 = ft_selectdata(roi_cfg, all_AttIn);
+        region2 = ft_selectdata(roi_cfg, all_attention);
         region2 = region2.trial;
         region2 = cat(3,region2{:});
         num_r2 = size(region2, 1);
@@ -153,10 +159,18 @@ for r1 = 1 : length(regions)-1
 %                     gc_two(end+1,:) = squeeze(f(2,1,:));
                     % Updated from source code first dim is to, second is
                     % from
-                    gc_one(end+1,:) = squeeze(f(2,1,:)); 
-                    gc_two(end+1,:) = squeeze(f(1,2,:));
+                    
+                    if isreal(sqrt(squeeze(f(1,2,:)))) && isreal(sqrt(squeeze(f(2,1,:))))
 
-                    sizes(end+1) = size(f,3);
+                        % Only collect f of size maz_len_f
+                        gc_one(end+1,:) = squeeze(f(1,2,:)); 
+                        gc_two(end+1,:) = squeeze(f(2,1,:));
+
+                        sizes(end+1) = size(f,3);
+
+                    else
+                        bad_chans(end+1,:) = {chan1 chan2};
+                    end
 
                 catch % for intstances with unstable VAR root
 
@@ -168,8 +182,9 @@ for r1 = 1 : length(regions)-1
         end
         gc_forward{end+1} = gc_one;
         gc_backward{end+1} = gc_two;
+        bad_channels{end+1} = bad_chans;
     end
 end    
 
 clear all_AttIn;
-save(sprintf('/home/12297127/cls_thesis/server_files/results/%s_new_model_free_gc_one_v_one', monkey));
+save(sprintf('/home/12297127/cls_thesis/server_files/results/%s_all_attention_model_free_gc_one_v_one', monkey));
